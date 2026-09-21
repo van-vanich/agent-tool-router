@@ -1,0 +1,44 @@
+{
+  "name": "@van-vanich/agent-tool-router",
+  "version": "0.1.0",
+  "description": "A tool-decision SDK for AI agents.",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./presets": {
+      "types": "./dist/presets.d.ts",
+      "import": "./dist/presets.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "npm run build && node examples/basic.mjs",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.mjs",
+    "test:live": "npm run build && node test/live-jev.mjs"
+  },
+  "keywords": [
+    "ai-agent",
+    "tool-router",
+    "jev",
+    "typesafe-ai",
+    "policy"
+  ],
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.5.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
